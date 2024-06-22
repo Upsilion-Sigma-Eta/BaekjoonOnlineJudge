@@ -2,7 +2,7 @@
 
 ## 링크
 
-[1003번: 피보나치 함수 (acmicpc.net)](https://www.acmicpc.net/problem/1003)
+[15118번: Halfway (acmicpc.net)](https://www.acmicpc.net/problem/15118)
 
 ## 제약 조건
 
