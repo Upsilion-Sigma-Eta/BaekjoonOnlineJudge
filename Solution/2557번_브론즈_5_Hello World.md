@@ -1,8 +1,8 @@
-# 1000번 A+B
+# 2557번 Hello World
 
 ## 링크
 
-[1000번: A+B (acmicpc.net)](https://www.acmicpc.net/problem/1000)
+[2557번: Hello World (acmicpc.net)](https://www.acmicpc.net/problem/2557)
 
 ## 제약 조건
 
