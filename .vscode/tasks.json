@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C++ Clean",
+      "type": "shell",
+      "command": "rmdir",
+      "args": ["/s", "/q", "temp"],
+      "presentation": {
+        "echo": false,
+        "reveal": "never",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "C++ Build Debug (MSVC)",
+      "type": "shell",
+      "dependsOn": "C++ Clean",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "if not exist temp mkdir temp && call \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\" && cl /EHsc /Zi /Od /utf-8 /Fe:temp\\debug.exe /Fd:temp\\debug.pdb \"${file}\""
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "C++ Build Release (MSVC)",
+      "type": "shell",
+      "dependsOn": "C++ Clean",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "if not exist temp mkdir temp && call \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\" && cl /EHsc /O2 /utf-8 /Fe:temp\\release.exe \"${file}\""
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$msCompile"]
+    }
+  ]
+}
