@@ -31,7 +31,7 @@ def Solve(T, S, N, M, L, A, C, D):
                 # 스키 타기
                 slope_time = shortest_slope[skill]
                 if slope_time < float('inf'):
-                    new_time = time + slope_time
+                    new_time = time + int(slope_time)
                     if new_time <= T:
                         if dp[new_time][skill] < current_runs + 1:
                             dp[new_time][skill] = current_runs + 1

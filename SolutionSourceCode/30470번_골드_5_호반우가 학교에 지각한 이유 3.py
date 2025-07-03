@@ -28,8 +28,9 @@ def Solution():
             log_after_query_max_length.append(log_current_query_max_length)
 
     # 각 시점부터의 쿼리 이후의 최소 길이 값을 저장할 배열 생성
+    INF = 10**18
     min_k_i = [0] * (N + 1)
-    min_k_i[N] = float('inf')
+    min_k_i[N] = INF
     for i in range(N - 1, -1, -1):
         min_k_i[i] = min(log_after_query_max_length[i], min_k_i[i + 1])
 
