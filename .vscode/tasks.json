@@ -4,8 +4,8 @@
     {
       "label": "C++ Clean",
       "type": "shell",
-      "command": "rmdir",
-      "args": ["/s", "/q", "temp"],
+      "command": "cmd.exe",
+      "args": ["/c", "if exist temp rmdir /s /q temp"],
       "presentation": {
         "echo": false,
         "reveal": "never",
@@ -60,6 +60,42 @@
         "cwd": "${workspaceFolder}"
       },
       "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "C++ Cleanup After Debug",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "if exist temp\\debug.exe del temp\\debug.exe & if exist temp\\debug.pdb del temp\\debug.pdb & if exist temp\\debug.ilk del temp\\debug.ilk & if exist temp\\*.obj del temp\\*.obj & if exist temp (dir /b temp 2>nul | findstr . >nul || rmdir temp)"
+      ],
+      "presentation": {
+        "echo": false,
+        "reveal": "never",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "C++ Cleanup After Release",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "if exist temp\\release.exe del temp\\release.exe & if exist temp\\*.obj del temp\\*.obj & if exist temp (dir /b temp 2>nul | findstr . >nul || rmdir temp)"
+      ],
+      "presentation": {
+        "echo": false,
+        "reveal": "never",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
     }
   ]
 }
