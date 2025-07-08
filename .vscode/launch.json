@@ -14,8 +14,7 @@
       "cwd": "${workspaceFolder}",
       "environment": [],
       "console": "integratedTerminal",
-      "preLaunchTask": "C++ Build Debug (MSVC)",
-      "postDebugTask": "C++ Cleanup After Debug"
+      "preLaunchTask": "C++ Build Debug (MSVC)"
     },
     {
       "name": "C++ Release (MSVC)",
@@ -27,8 +26,7 @@
       "cwd": "${workspaceFolder}",
       "environment": [],
       "console": "integratedTerminal",
-      "preLaunchTask": "C++ Build Release (MSVC)",
-      "postDebugTask": "C++ Cleanup After Release"
+      "preLaunchTask": "C++ Build Release (MSVC)"
     }
   ]
 }
